@@ -1,0 +1,148 @@
+<!-- 
+    *Comments:
+    - CTRL + /  |   CMD + / -> Quick key to create a comment line.
+    - ALT+Shift+A | OPT+Shift+A -> Quick key to create a comment field.
+    -Comments are ignored when the code is compiled and ran.
+ -->
+ <!-- 
+    "!" or "Bang" is a way for us to quickly create a boilerplate for our HTML document.
+  -->
+  <!DOCTYPE html>
+  <html lang="en">
+    <!-- 
+        - DOCTYPE:Declares exactly what it is, and HTML document.
+        - lang;Notes what the language of the document is. Helps assist search engines and browsers.
+        - The head tag holds all of our meta data for the document.
+        - This holds various information such as the title of the document, viewport settings, and links to other files, like CSS.
+     -->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        - Charset: defines which characters are available, such as 0-9, a-z, and symbols.
+            - UTF-8 covers almost all of the characters.
+        - http-equiv: It allows us to render older browser versions if necessary. In this case we are targeting Edge; However this isn't as necessary.
+        - name and content: Details on the users viewport, or screen, and auto scales as necessary. 
+        - title: details the title of our document. This is displayed in the tab of the browser page.
+     -->
+  </head>
+  <!-- 
+    * Body:
+        - what the client will display when rendering.
+        - Where the HTML elements live.
+   -->
+  <body>
+    <!-- 
+        - HTTP methods: (used as data transfer protocols.)
+            - GET 
+            - POST
+            - PATCH
+            - PUT
+            - DELETE
+        3 major languages
+            - HTML, HyperText Markup Language, The foundation of elements on the page. The entry point for a webpage is the index.html.
+            - CSS, Cascading style sheets. The styling/look of the elements and page.
+            - JavaScript. The ability to make things happen.The "logic" that allows the site to process data, etc.
+     -->
+     <!-- 
+        HTML is made of:
+        - Element: building blocks of HTML, different types of elements written as tags. AKA Nodes of the document.
+        - Attributes: Are defined in the opening tag on an element. they give the element more functionality. Ex; class, id, style, href etc.
+      -->
+
+      <h1>Example of Structural Elements:</h1>
+      <div>
+        <div>
+            - h1: heading, These range from h1-h6. The text gets smaller as the number increases.
+            <br>
+            - div: A division.
+            <br>
+            - p: Paragraph elements, a text element.
+            <br>
+            - img: provides us an element to present an image. This is a self closing tag.
+            <br>
+            - span: We can write a block of text without line breaks.
+        </div>
+
+        <h2>sample h2</h2>
+        <h3>sample h3</h3>
+        <p>
+            Here is a paragraph Element.
+        </p>
+        <!--  
+            Using emmet, we can inject "lorem" and hit tab to populate a block of text.
+        -->
+        <span>Span Content: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic fugiat cupiditate esse vitae molestiae corporis maxime iusto. Explicabo, adipisci. Nam perferendis sint hic vel natus at totam non exercitationem repudiandae.</span>
+        <br>
+        <img src="https://assets.website-files.com/5f4577933a0688792f77983b/5ffcaf5bf69d7dbee581b8e3_01_11-21_UPRIGHT_LOGO_800.png" alt="Upright Logo">
+        <!-- 
+            * img tag has two default attributes
+                - src 
+                    - required attribute
+                    - The source of the image. This could be in an assets folder, or another location on the web.
+                - alt
+                    - optional, but HIGHLY recommended
+                    - text that is used in case an image doesn't load.
+                    - Text that is read by screen readers for the visually impaired.
+                    - Can be a source for SEO(Search Engine Optimization)
+                - Title
+                    - can help with tool-tips
+         -->
+         <img src="/assets/UprightLogo.png" alt="Upright Logo">
+      </div>
+
+      <h1>Examples of Style/Styled Elements</h1>
+      <div>
+        <!-- 
+            emmet example: div>ul>li*6
+            ul: unordered list
+            ol: ordered list
+            li: list item
+         -->
+         <div>
+            <ul>
+                <li><strong>Bolds our text</strong> But so does <b>This</b>!<li>
+                <li><em>Provides emphasis.</em> or <i>italics</i>.</li>
+                <li><br>Will do a line break for us. <i>Notice no closing tag</i></li>
+                <li><hr> gives us a horizontal rule, or <b>dividing line</b></li>
+                <li><blockquote>"quote"</blockquote></li>
+                <li><pre>A way to showcase code</pre></li>
+            </ul>
+         </div>
+      </div>
+
+      <h1>Self-closing Elements</h1>
+      <div>
+        <!-- 
+            Input: typically used in forms but not limited to them.
+                - Many different types
+            link: Won't show up in the browser, but is a way for us to connect files, such as CSS. Usually in the "head" tag.
+         -->
+        <input type="text">
+        <input type="email">
+        <link rel="stylesheet" href="">
+      </div>
+
+      <h1>HTML Layout/Page Structure elements</h1>
+      <h1>Semantic Elements</h1>
+      <!-- 
+        * These are known as semantic Elements
+            - tag name clearly describes it's meaning/content to the browser and the developer.
+       -->
+       <img src="https://i.pinimg.com/originals/46/e2/1c/46e21c46e7001fca6554cd45562268fa.jpg" alt="HTML Semanic tag Ex">
+       <div>
+        <!-- Header Section/Part/Portion/Layout -->
+        <header>Sample Header</header>
+        <nav>Navbar or site navigation</nav>
+        <aside>Side content, in example sidebar</aside>
+        <section>
+            main content/parent container
+            <article>First article: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sunt harum a reiciendis laborum quod dolorum, corporis cum maiores nesciunt, quas deleniti quia minus, voluptatibus distinctio earum. Obcaecati, ipsa saepe.</article>
+            <article>Second Article: Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis assumenda provident aperiam dolor earum consectetur optio aspernatur, voluptatum, eligendi, nesciunt quia sit! Error velit nesciunt quidem repellendus excepturi corrupti voluptatibus.</article>
+        </section>
+        <footer>Footer of the page.</footer>
+       </div>
+  </body>
+  </html>
