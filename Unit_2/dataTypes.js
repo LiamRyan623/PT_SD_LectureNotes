@@ -109,3 +109,20 @@ let truck = car; // Not a literal
 
 // numeric literal
 let dec = 25;
+
+// Boolean
+let tired = true;
+
+// Object
+let soup = {
+  a: "chicken noodle",
+  b: "tomato",
+  c: "beef and barley",
+};
+
+// Array
+let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+
+console.log(days);
+console.log(days.toString());
+console.log(days.length);
