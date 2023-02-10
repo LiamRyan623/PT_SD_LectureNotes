@@ -38,6 +38,7 @@ let rand = Math.floor(Math.random() * badGuys.length);
 
 // grab random villain from array
 let villain = badGuys[rand];
+console.log(villain);
 
 // Message on who appeared
 
@@ -45,14 +46,14 @@ console.log(`${villain.baddie} has appeared and is up to no good!`)
 
 do {
     // Take out the thug asap
-    if (villian.baddie == "Thug"){
+    if (villain.baddie == "Thug"){
         console.log('Spider-Man webs the thug...');
         break; 
     }
 
     // Message & attack from villain
-    console.log(`${villian.baddie} hits Spider-man!`)
-    spideyHP--; //villain attacking for 1 hp
+    console.log(`${villain.baddie} hits Spider-man!`)
+    spidyHP--; //villain attacking for 1 hp
 
     console.log('Spider-Man HP: ', spidyHP);
 
@@ -61,7 +62,7 @@ do {
     console.log(`Spider-Man hits ${villain.baddie} for ${spidyHit} damage!!!!`)
 
     //villain HP math and message
-    villian.hp -= spidyHit;
+    villain.hp -= spidyHit;
     console.log("Villain HP: ", villain.hp);
 
     if (spidyHP === 0){
@@ -73,7 +74,7 @@ do {
 
 // Conditionally print a win or loss.
 if (villain.hp <= 0) {
-    console.log(`Spider-Man has saved the day and captured ${villian.baddie}!`)
+    console.log(`Spider-Man has saved the day and captured ${villain.baddie}!`)
 } else {
-    console.log(`${villian.baddie} has taken out Spider-Man. Who will save us now...`)
+    console.log(`${villain.baddie} has taken out Spider-Man. Who will save us now...`)
 }
