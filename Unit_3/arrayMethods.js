@@ -38,7 +38,7 @@ console.log("toString Method: ", rgb.toString());
 
 /* 
 ?    .filter() and .includes()
-    - Does not destroy the origional array
+    - Does not destroy the original array
     - we typically store the filter array in a new variable
     - takes a callback function that returns either true or false.
         - A callback function is another function that we invoke within our main function.
@@ -61,7 +61,7 @@ let fruits = ["Kumquat", "Banana", "Plum", "Kiwi", "Watermelon", "mango"];
 // .includes(), remove any fruit with "p" .includes done on one item at a time(single value at a time.)
 console.log("Includes Method: ", fruits.includes("p"));
 
-// .filter with .includeds, remove any fruit with "p"
+// .filter with .includes, remove any fruit with "p"
 
 const filterFruit2 = fruits.filter((item) => !item.includes("P"))
 console.log(filterFruit2);
