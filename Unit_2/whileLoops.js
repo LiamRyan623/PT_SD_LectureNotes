@@ -17,6 +17,12 @@ while(n < 10) {
     console.log("      ")
 }
 
+while(n <= 20) {
+    console.log(`bingo ${n}`);
+    n++;
+
+}
+
 let y = 1;
 while (y <5) {
     y++
