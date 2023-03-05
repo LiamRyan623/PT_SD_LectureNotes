@@ -43,16 +43,19 @@ class Item {
 */
 
 // ex: Create a class called NewObject and instantiate/Create an object off the class
-class NewObject {
-    constructor() {
+class newRoom {
+    constructor(name, description) {
         this.name;
         this.desc;
     }
 }
 
-let one = new NewObject();
-one.name = "sample";
+let foyer = new newRoom(
+"foyer",
+"description of room",
 //console.log(one);
+)
+
 
 // Instantiate/create an object off of class Item with and without values:
 
