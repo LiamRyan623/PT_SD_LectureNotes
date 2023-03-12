@@ -143,7 +143,7 @@ function enterState(newState) {
         //Have a message if state is not available.
         //console.log("Invalid State.")
         // use throw to stope, state, and define an error
-        throw `Invalid state; ${currentState} to ${newState}`
+        throw(`Invalid state; ${currentState} to ${newState}`)
     }
 }
 
