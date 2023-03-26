@@ -5,8 +5,29 @@ const app = express();// simplify our method calls.
 // Create a PORT number to run the app on our local machine.
 // Server port within localhost. Using all caps indicates a "general variable."
 const PORT = 4000;
+
+
+
+
+//------------------- Required file paths-------------------
 // Create a variable that imports the practice controller.
 const practiceController = require('./controller/practice.controller');
+// Require in the index.js from helpers( ./helpers) w/ object destructuring
+const auth = require("./controller/auth.controller");
+const { logTime } = require('./helpers');
+
+
+
+//------------------------App functionality/ what it does next---------------------------
+app.use(logTime);
+
+app.use(express.json());
+
+
+//
+app.use(express.urlencoded());
+
+
 
 
 // use a method called .use(). This points our express app to where it should go.
@@ -24,7 +45,8 @@ ex: localhost:4000/practice
 
 app.use('/practice', practiceController);
 
-
+// Building route to auth controller: http://localhose:4000/todo
+app.use("/todo", auth);
 
 
 // Create a method that "listens" for us spinning up/starting our application 
