@@ -14,9 +14,15 @@ const PORT = 4000;
 const practiceController = require('./controller/practice.controller');
 // Require in the index.js from helpers( ./helpers) w/ object destructuring
 const auth = require("./controller/auth.controller");
+
+const routes = require("./controller/routes.controller")
+
 const { logTime } = require('./helpers');
 
 
+
+// create a variable to require in and have CORS dependency accessible
+const cors = require('cors');
 
 //------------------------App functionality/ what it does next---------------------------
 app.use(logTime);
@@ -26,6 +32,10 @@ app.use(express.json());
 
 //
 app.use(express.urlencoded());
+
+//runs the cors preflight request prior to hitting our endpoints/routes
+// Allows all CORS requests
+app.use(cors());
 
 
 
@@ -47,6 +57,9 @@ app.use('/practice', practiceController);
 
 // Building route to auth controller: http://localhose:4000/todo
 app.use("/todo", auth);
+
+//route to routes controller: http://localhose:4000/
+app.use("/routes", routes);
 
 
 // Create a method that "listens" for us spinning up/starting our application 

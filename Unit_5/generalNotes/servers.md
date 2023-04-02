@@ -9,7 +9,6 @@ A.k.a. : Node.js is an open source server environment, allows us to write server
 
 We will be using **Express** to build an Express App server.
 
-
 # Express
 
 A web framework for Node.js
@@ -18,6 +17,7 @@ A web framework for Node.js
 - Node.js can be used to write both back and front end code, thus can be used to construct servers
 - Node.js is like a car engine, you still need to gather the parts and put the vehicle together. ExpressJS is like a pre-built car you can hop in and start driving.
 
+### [Express](https://expressjs.com/):
 
 - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 - With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy.
@@ -32,11 +32,7 @@ This allows us to create our own routes and endpoints to perform CRUD functional
 - Update, PUT, [.put()](https://expressjs.com/en/4x/api.html#app.put.method)
 - Delete, DELETE, [.delete()](https://expressjs.com/en/4x/api.html#app.delete.method)
 
-<!-- ![A simple flow image.](./assets/Software%20Flow.png)
- -->
-
-
- # Project Set Up
+# Project Set Up
 
 1. In terminal within Project folder run command: `npm init -y`
 
@@ -47,11 +43,42 @@ This allows us to create our own routes and endpoints to perform CRUD functional
 
 - To install Express we run the command: `npm i express`
 - Node Package Manager(npm) install(i) express
+- Brings in our node_modules and package-lock.json
 
 3. We will create a file within our project (the traditional way in VSC) titled: `.gitignore`
 
 - In the gitignore file we will add: `/node_modules`
 - This tells our local repository to ignore the node_modules folder when we push and backup our code to GitHub
+- When cloning down a project that ignores items: run the command "npm install" to acquire all dependencies/files needed
+
+---
+
+## API vs. Server
+
+We've talked about APIs and Servers in a general sense a lot together.
+To be clear:
+
+- An API and the Server are two different things
+- An API is an Application Programming Interface, which is a way to provide information for other applications (communication among applications, ex. the front end web page can communicate with the server).
+- An API provides access to the server.
+- A server is an application that's locally saved in your system, even a physical device.
+
+### Visual Examples:
+
+![Example 1](./assets/rest-api-model.png)
+
+![Example 2](./assets/API.png)
+
+---
+
+## MVC
+
+- Stands for Model View Controller
+- Architecture pattern(structure in which they are written/coded) that helps our Separation of Concerns
+- Model: Database schematic, the blueprint for our data (we dictate what created data looks like/it's datatype)
+- View: browser, Postman, etc. (what the users see)
+  - Application that interface with the server.
+- Controller: Part of the server application which handles logic. (How we build our logic within the server, we code and create what routes can be used and what they do.)
 
 ---
 
