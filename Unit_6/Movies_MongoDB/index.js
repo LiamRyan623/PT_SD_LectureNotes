@@ -9,7 +9,8 @@ const log = console.log;
 
 
 //Controllers
-const users = require("./controllers/user.controller")
+const users = require("./controllers/user.controller");
+const movies = require('./controllers/movie.controller');
 
 // Require in the mongoose middleware, pulled from node_modules
 const mongoose = require("mongoose");
@@ -34,6 +35,9 @@ db.once("open", () => log(`Connected: ${MONGO}`));
 
 app.use(express.json())
 
+//------------------------routes to controller
 app.use("/user", users);
+//http://localhost:4000/movies
+app.use("/movies", movies);
 
 app.listen(PORT, () => log(`Movie Server on Port: ${PORT}`));
