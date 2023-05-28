@@ -312,3 +312,29 @@ Validate Session is a middleware process that helps us (the sever/devs) verify i
 
 
 5. Update all endpoints that need to tie together the two documents (Ex. User and Movie)
+
+
+<br>
+<hr>
+<br>
+
+## Creating a **localstorage** item / Environment in Postman
+
+Usually tokens or other session items will be stored in the browser's localstorage.
+
+Postman also has the ability to do that via creating an **Environment**.
+
+This will let us set Postman Variables for our requests that need them, like after implementing validate-session to store session tokens.
+
+### **Referencing that environment in a Request:**
+
+1. Head back to your route where you want to add the environment (in class ex: our get all route).
+2. At the very top right, to the right of where the Postman request tabs are located: click the dropdown titled "No Environment ⌄"
+3. Change the dropdown to match your environment name (in class example: Movie_MongoDB Environment)
+4. Under the URL bar, click the "Headers" tab/button.
+   - Note: When you first open the Headers section, there is an "eye" icon to hide or un-hide Postman's automatic headers, please "hide" them to make adding in the JWT easier visually.
+   - Headers opens the field set to enter the key label and value.
+5. Enter the key/label for the header: **Authorization**.
+6. Enter the value by referencing the Environment variable name (in this ex: JWT).
+
+Tah dah! Now anytime you need to send a request to a route that requires a JWT, you can just call on and inject the token like above!

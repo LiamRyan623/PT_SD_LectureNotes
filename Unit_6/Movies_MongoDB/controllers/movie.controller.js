@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const Movie = require("../models/movie.model");
 
+
+// Way to use validate sessin directly in the controller and endoints:
+const validateSession = require("../middleware/validate-session");
+
+
 // Error Response Function
 const errorResponse = (res, error) => {
     return(
@@ -13,6 +18,8 @@ const errorResponse = (res, error) => {
 //TODO POST
 
 // http://localhost:4000/movies/
+
+//* Adding validate session to grab user._id from token to save to DB
 router.post('/', async (req,res) => {
     try {
         
@@ -20,7 +27,7 @@ router.post('/', async (req,res) => {
         const { title, genre, rating, length, releaseYear} = req.body;
         //2. Create a new object using the Model
         const movie = new Movie({
-            title, genre, rating, length, releaseYear
+            title, genre, rating, length, releaseYear, owner_id: req.user_id
         });
         //3. Use mongoose method to save to MongoDB
         const newMovie = await movie.save();
@@ -76,7 +83,8 @@ router.get("/:id", async (req, res) => {
         Hint: parameters within method are optional
 */
 
-router.get("/", async (req, res) => {
+//* Adding validate session by passing it in as a parameter for the endpoint.
+router.get("/", validateSession, async (req, res) => {
     try {
         
         const getAllMovies = await Movie.find();

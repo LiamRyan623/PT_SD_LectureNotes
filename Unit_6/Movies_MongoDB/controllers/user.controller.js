@@ -34,12 +34,13 @@ router.post("/signup", async (req, res) => {
   try {
     const user = new User({
       firstName: req.body.firstName,
-      lastName:req.body.lastName,
+      lastName: req.body.lastName,
       email: req.body.email,
       //password: req.body.password, Should not store plain text passwords in the DB
       // We want to pass in the password provided by the user, salt it 13 times, and add to db
       password: bcrypt.hashSync(req.body.password, 13)
     });
+    
     const newUser = await user.save();
 
     // create a token using the sign method of jwt, (payload, message, exp)
